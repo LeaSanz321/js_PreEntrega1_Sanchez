@@ -40,6 +40,7 @@ function inicio(){
                     alert("Número: " + numeroGanador);
                     alert("¡FELICIDADES! Haz acertado con " + intentos + " intentos");
                     ganador = true;
+                    i = intentosMaximos+1;
                 }else{
                     alert("Ups! Lo siento, número incorrecto!");
                     break;
