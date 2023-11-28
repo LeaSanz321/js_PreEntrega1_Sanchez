@@ -12,23 +12,24 @@ function validarDato (dato){
 }
 
 function preguntar(){
-    let pregunta = prompt("¿Quieres jugar una vez más? (si o no)").toLowerCase();
+    let pregunta = prompt("¿Quieres jugar una vez más? (si o no)");
 
     switch(pregunta){
         case "no":
             break;
-        case "si": 
+        case "si":
             inicio();
     }
 }
 
-function inicio (){
+function inicio(){
     let intentosMaximos = prompt("Seleccione USTED -> en cuántos intentos cree que puede adivinar?");
 
     for (let i = 0; i < intentosMaximos; i++){
         let ganador = false;
         while(ganador == false){
             let numeroGanador = numeroAlAzar();
+            let intentos = i;
             let intentoUsuario = prompt("Intente adivinar el número del 1 al 10:");
             if (validarDato(intentoUsuario) == true){
                 intentos ++;
@@ -37,7 +38,7 @@ function inicio (){
         
                 if (numeroUsuario === numeroGanador){
                     alert("Número: " + numeroGanador);
-                    alert("¡FELICIDADES! Haz acertado con " + i + " intentos");
+                    alert("¡FELICIDADES! Haz acertado con " + intentos + " intentos");
                     ganador = true;
                 }else{
                     alert("Ups! Lo siento, número incorrecto!");
